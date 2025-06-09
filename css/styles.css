@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -7,13 +8,13 @@
     text-decoration: none;
     font-family: "Geologica", sans-serif;
     color: #000;
+    scroll-behavior: smooth;
 }
 
 .div_nav{
     width: 100%;
-    height: 65px;
+    height: 4.063rem;
     background-color: #fff;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,26 +23,21 @@
     top: 0;z-index: 1000;
 }
 .div_nav_list{
-    width:  max-content;
     font-weight: 300;
 }
 .nav_logo{
     display: flex;
     color: #000;
-    width: 260px;
+    width: 16.25rem;
     justify-content: center;
 }
 .nav_list{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
 }
 .nav_list li{
-    padding: 0 15px;
     text-align: center;
-    width: 120px;
-
+    width: 7.5rem;
 }
 .nav_list li a{
     color: #031751;
@@ -56,13 +52,13 @@
     align-items: center;
     justify-content: space-around;
     margin-right: 20px;
-    width: 260px;
+    width: 16.25rem;
 }
 .nav_auth_login{
     background-color: #031751;
     color: #fff;
     padding: 12px 10px;
-    width: 130px;
+    width: 8.125rem;
     text-align: center;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
@@ -75,7 +71,7 @@
     color: #031751;
     padding: 10px 10px;
     border-radius: 10px; 
-    width: 120px;
+    width: 7.5rem;
     text-align: center;
     border: 2px solid #031751;
     transition: all 0.3s ease-in-out;
@@ -100,34 +96,34 @@
     justify-content: center;
 }
 .hero_content h2{
-    font-size: 55px;
+    font-size: 3.438rem;
     color: #4a4b4e;
     font-weight: 300;
     width: 100%;
 }
 .hero_content h1{
-    font-size: 80px;
+    font-size: 5rem;
     color: #031751;
     font-weight: 600;
     width: 100%;
 }
 .hero_content span{
     background-color: #031751;
-    height: 5px;
+    height: 0.313rem;
     width: 15%;
     align-self: flex-start;
 }
 .hero_content p{
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #4a4b4e;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 .hero_buttons{
     display: flex;
     justify-content: start;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 .hero_buttons a{
     background-color: #031751;
@@ -136,7 +132,7 @@
     text-align: center;
     border-radius: 10px;
     border: none;
-    width: 200px;
+    width: 12.5rem;
     font-size: 16px;
     margin: auto;
     transition: all 0.3s ease-in-out;
@@ -161,8 +157,8 @@
     z-index: 1;
     top: 70%;
     left: 52%;
-    height: 100px;
-    width: 250px;
+    height: 6.25rem;
+    width: 15.625rem;
     color: #031751;
     border: 2px solid #031751;
     border-radius: 10px;
@@ -179,7 +175,7 @@
     justify-content: center;
 }
 .fa-car-side{
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #fff;
     border: #031751 2px solid;
     border-radius: 50%;
@@ -189,7 +185,7 @@
 .hero_img_h1 h1{
     width: 60%;
     height: fit-content;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #031751;
     font-weight: 600;
 }
@@ -215,11 +211,11 @@
     font-weight: bold;
 }
 .about_content p{
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #4a4b4e;
     width: 40%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 .about_cards{
     width: 100%;
@@ -233,33 +229,33 @@
     text-align: center;
     border: #000  .5px solid;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    width: 450px;
+    border-radius: 1.875rem;
+    width: 28.125rem;
     height: 70%;
 }
 .about_img{
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 25%; 
     margin: 60px auto;
     background-color: #031751;
 }
 .fa-map-pin{
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #e00;
     padding: 20px;
     border-radius: 50%;
     background-color: #031751;
 }
 .fa-bolt{
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #ff0;
     padding: 20px;
     border-radius: 50%;
     background-color: #031751;
 }
 .fa-lightbulb{
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #fc8;
     padding: 20px;
     border-radius: 50%;
@@ -274,6 +270,164 @@
     margin: 50px auto 5px;
 }
 .about_card p{
-    height: 105px;
-    font-size: 18px;
+    height: 6.563rem;
+    font-size: 1.125rem;
+}
+.footer_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    height: 2.5rem;
+}
+.login_container{
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_content{
+    width: 30%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.login_form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+}
+.login_content_text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.login_content_text h1{
+    font-size: 1.6rem;
+    color: #031751;
+}
+.login_content_text p{
+    font-size: 1rem;
+    color: #666;
+}
+.form_group{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+}
+.form_group_remember{
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+.remember_checkbox{
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: .25rem;
+    border: #000 1px solid;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.remember_checkbox:checked{
+    background-color: #031751;
+}
+.remember_text{
+    font-size: .9rem;
+    flex: 1;
+    text-align: start;
+}
+.remember_password{
+    text-align: end;
+    color: #031751;
+    font-weight: 600;
+    cursor: pointer;
+}
+.form_group label{
+    font-size: 1rem;
+    color: #031751;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.form_group input{
+    width: 100%;
+    height: 3rem;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    color: #666;
+    transition: all 0.2s ease-in-out;
+}
+.form_group_button button{
+    width: 100%;
+    height: 3rem;
+    background-color: #37456e;    
+    color: #ddd;  
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 2px solid #37456e;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.form_group_button button:hover{
+    background-color: #031751;
+    border: 2px solid #031751;
+    color: #fff;
+}
+.login_container_footer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.login_content_footer_register{
+    width: 100%;
+    font-size: 1rem;
+    color: #666;
+}
+.login_content_footer_register a{
+    color: #031751;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+.login_social_media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.login_social_media_link{
+    border: #000 1px solid;
+    border-radius: .5rem;
+    width: 9rem;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+.login_social_media_link:hover{
+    background-color: #eee;
+}
+.login_content_footer_terms{
+    width: 100%;
+    font-size: 0.7rem;
+    color: #666;
+    text-align: center;
+}
+.login_content_footer_terms a{
+    color: #031751;
+    font-weight: 400;
 }
