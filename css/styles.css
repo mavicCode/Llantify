@@ -280,14 +280,14 @@
     background-color: #f5f5f5;
     height: 2.5rem;
 }
-.login_container{
+.login_container, .signup_container{
     height: 100vh;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.login_content{
+.login_content, .signup_content{
     width: 30%;
     height: 90%;
     background-color: #fff;
@@ -299,22 +299,22 @@
     justify-content: center;
     gap: 2rem;
 }
-.login_form{
+.login_form, .signup_form{
     display: flex;
     flex-direction: column;
     width: 80%;
     gap: 2rem;
 }
-.login_content_text{
+.login_content_text, .signup_content_text{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.login_content_text h1{
+.login_content_text h1, .signup_content_text h1{
     font-size: 1.6rem;
     color: #031751;
 }
-.login_content_text p{
+.login_content_text p, .signup_content_text p{
     font-size: 1rem;
     color: #666;
 }
@@ -380,12 +380,15 @@
     transition: all 0.2s ease-in-out;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
+.signup_button button{
+    height: 2.25rem;
+}
 .form_group_button button:hover{
     background-color: #031751;
     border: 2px solid #031751;
     color: #fff;
 }
-.login_container_footer{
+.login_container_footer, .signup_container_footer{
     width: 100%;
     height: fit-content;
     display: flex;
@@ -394,12 +397,12 @@
     align-items: center;
     justify-content: center;
 }
-.login_content_footer_register{
+.login_content_footer_register, .signup_content_footer_register{
     width: 100%;
     font-size: 1rem;
     color: #666;
 }
-.login_content_footer_register a{
+.login_content_footer_register a, .signup_content_footer_register a{
     color: #031751;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
