@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2e393f0bab.js" crossorigin="anonymous"></script>
+    <title>Inicio de Sesion - Llantify</title>
+</head>
+<body>
+    <section class="login_container">
+        <div class="login_content">
+            <div class="login_content_logo">
+                <a href="index.html" class="login_content_logo_link">
+                    <img src="assets/img/logo_llantify.png" alt="Llantify Logo" class="login_content_logo_img">
+                </a>
+            </div>
+            <div class="login_content_text">
+                <h1>Iniciar Sesión</h1>
+                <p>Ingresa a tu cuenta para continuar</p>
+            </div>
+            <form class="login_form">
+                <div class="form_group_email form_group">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="tu@email.com" id="email" name="email" required>
+                </div>
+                <div class="form_group_password form_group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form_group_remember">
+                    <input class="remember_checkbox" type="checkbox" id="remember" name="remember">
+                    <label class="remember_text" for="remember">Recordarme</label>
+                    <label class="remember_password" for="remember">¿Olvidaste tu contraseña?</label>
+                </div>
+                <div class="form_group_button">
+                    <button type="submit" class="btn_login">Iniciar Sesión</button>
+                </div>
+            </form>
+        <div class="login_container_footer">
+            <p class="login_content_footer_register">¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a><br><br> O continua con</p>
+            <div class="login_social_media">
+                <a href="#" class="login_social_media_link"><i class="fa-brands fa-google"></i> Google</a>
+                <a href="#" class="login_social_media_link"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            </div>
+            <p class="login_content_footer_terms">Al iniciar sesión, aceptas nuestros <a href="#">Terminos de Servicio</a> y <a href="#">Política de Privacidad</a></p>
+        </div>
+    </section>
+</body>
+</html>
