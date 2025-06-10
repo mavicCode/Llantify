@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario - Llantify</title>
+  <link rel="stylesheet" href="css/stylesCalendario.css" />
+</head>
+<body>
+  <!-- Calendario -->
+  <header>
+    <nav class="nav-container">
+      <div class="logo">
+        <img src="assets/img/logo_llantify1.png" alt="Logo Llantify" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="home_page.html">Inicio</a></li>
+        <li><a href="#">Rutas</a></li>
+        <li><a href="#" class="active">Calendario</a></li>
+        <li><a href="#">Historial</a></li>
+        <li><a href="#">Actividad</a></li>
+      </ul>
+      <div class="user-profile">
+        <img src="assets/img/default-avatar.png" alt="Perfil de usuario" />
+      </div>
+    </nav>
+  </header>
+
+  <main class="calendar-page">
+    <div class="calendar-container">
+      <div class="calendar-view">
+        <h2>Noviembre 2024</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>L</th>
+              <th>M</th>
+              <th>X</th>
+              <th>J</th>
+              <th>V</th>
+              <th>S</th>
+              <th>D</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="events-list">
+        <h2>Tus eventos guardados</h2>
+        <ul>
+          <li>
+            <div class="event">
+              <span class="event-color azul"></span>
+              <div class="event-info">
+                <h3>Matemáticas Avanzadas</h3>
+                <p>Lunes, 09:00 - 10:30</p>
+                <p>Aula 201</p>
+              </div>
+              <div class="event-actions">
+                <button class="edit-btn" onclick="location.href='edit_calendar.html'">
+                  ✏️
+                </button>
+                <button class="delete-btn">🗑️</button>
+              </div>
+            </div>
+          </li>
+          <!-- Más eventos aquí -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Botón flotante -->
+    <button class="add-event-btn" onclick="location.href='crear_evento.html'">+</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Llantify. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
