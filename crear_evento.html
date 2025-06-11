@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agrega tu clase o evento - Llantify</title>
+  <!-- Google Font Geologica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/stylesCrearEvento.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <div class="logo">
+        <img src="assets/img/logo_llantify1.png" alt="Logo Llantify" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="home_page.html">Inicio</a></li>
+        <li><a href="#">Rutas</a></li>
+        <li><a href="#" class="active">Calendario</a></li>
+        <li><a href="#">Historial</a></li>
+        <li><a href="#">Actividad</a></li>
+      </ul>
+      <div class="user-profile">
+        <img src="assets/img/default-avatar.png" alt="Perfil de usuario" />
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <h1>Agrega tu clase o evento</h1>
+    <p class="subtitle">
+      Organiza tu horario académico y recibe recordatorios automáticos<br />
+      para no perderte ninguna clase importante
+    </p>
+
+    <div class="card">
+      <form action="#" method="post">
+        <!-- Nombre del curso -->
+        <label for="curso">Nombre del curso</label>
+        <input
+          type="text"
+          id="curso"
+          name="curso"
+          placeholder="Ej: Matemáticas Avanzadas, Historia del Arte..."
+          required
+        />
+
+        <!-- Día de la semana -->
+        <label for="dia">Día de la semana</label>
+        <select id="dia" name="dia" required>
+          <option value="Lunes" selected>Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+          <option value="Sábado">Sábado</option>
+          <option value="Domingo">Domingo</option>
+        </select>
+
+        <!-- Horarios -->
+        <div class="horarios">
+          <div>
+            <label for="hora_inicio">Hora de inicio</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required />
+          </div>
+          <div>
+            <label for="hora_fin">Hora de fin</label>
+            <input type="time" id="hora_fin" name="hora_fin" required />
+          </div>
+        </div>
+
+        <!-- Recordatorio -->
+        <div class="recordatorio">
+          <div class="texto">
+            <label>Activar recordatorio</label>
+            <small>Recibe una notificación 15 minutos antes</small>
+          </div>
+          <label class="switch">
+            <input type="checkbox" name="recordatorio" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Color de etiqueta -->
+        <label>Color de etiqueta</label>
+        <div class="colores">
+          <!-- Cada input+span hacen un radio personalizado -->
+          <label class="color-option">
+            <input type="radio" name="color" value="azul" checked />
+            <span class="circle azul"></span>
+          </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="rojo" />
+            <span class="circle rojo"></span>
+          </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="verde" />
+            <span class="circle verde"></span>
+          </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="amarillo" />
+            <span class="circle amarillo"></span>
+          </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="morado" />
+            <span class="circle morado"></span>
+          </label>
+          <label class="color-option">
+            <input type="radio" name="color" value="rosa" />
+            <span class="circle rosa"></span>
+          </label>
+        </div>
+
+        <!-- Botón -->
+        <button onclick="window.location.href='calendar.html';" type="submit" class="btn-submit">
+          Guardar en mi calendario
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Llantify. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

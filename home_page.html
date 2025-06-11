@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2e393f0bab.js" crossorigin="anonymous"></script>
+    <title>Inicio - Llantify</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="div_nav">
+                <div class="nav_logo"> 
+                    <a href="home_page.html">
+                        <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img">
+                    </a>
+                </div>
+                <div class="div_nav_list">
+                    <ul class="nav_list">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="user_routes.html">Rutas</a></li>
+                        <li><a href="#user_calendar.html">Calendario</a></li>
+                        <li><a href="#user_history.html">Historial</a></li>
+                        <li><a href="#user_activity.html">Actividad</a></li>
+                    </ul>
+                </div>
+                <div class="nav_user">
+                    <div class="nav_user_profile_container"><img src="" alt="" class="user_profile"></div> 
+                    <div class="user_dropdown">
+                        <!-- /* Dropdown content */ -->
+                        <a href="profile.html" class="user_dropdown_link">Perfil</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="main_container">
+    <section class="search_section">
+        <div class="search_container">
+            <form class="search_form">
+                <div class="form_group_search_origin form_group">
+                    <label for="search_origin">Origen</label>
+                    <input type="text" placeholder="¿Desde dónde partes?" id="search_origin" name="search_origin" required>
+                </div>
+                <div class="form_group_search_destination form_group">
+                    <label for="search_destination">Destino</label>
+                    <input type="text" placeholder="¿A dónde vas?" id="search_destination" name="search_destination" required>
+                </div>
+                <div class="form_group_button search_button">
+                    <button type="submit" class="btn_search_route">Buscar ruta</button>
+                </div>
+            </form>
+        </div>      
+    </section>
+    <section class="user_map_section">
+        <div class="user_map_container">
+            <div class="user_map_content">
+                <h2>Mapa de Rutas</h2>
+            </div>
+            <div class="user_map">
+                <div class="user_map_place">
+                    <p>Mapa de rutas aquí</p>
+                </div>        
+            </div>
+            <div class="user_route_info">
+                <div class=" user_route_info_card user_route_info_time">
+                    <i class="fa-solid fa-clock route_info_icon"></i>
+                    <p>Tiempo de Llegada</p>
+                    <label for="">23min</label>
+                </div>
+                <div class=" user_route_info_card user_route_info_distance">
+                    <i class="fa-solid fa-route route_info_icon"></i>
+                    <p>Distancia</p>
+                    <label for="">7.2km</label>
+                </div>
+                <div class=" user_route_info_card user_route_info_cost">
+                    <i class="fa-solid fa-dollar-sign route_info_icon"></i>
+                    <p>Costo Total</p>
+                    <label for="">$42</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="user_fav_recent_routes_section">
+        <div class="user_fav_recent_routes_container">
+            <div class="user_fav_recent_buttons">
+                <button class="btn_fav_routes btn_home_active">Favoritos</button>
+                <button class="btn_recent_routes ">Historial</button>
+            </div>
+            <div class="user_fav_route_home_section  "> <!-- /* Favoritos Home */ -->
+                <div class="user_side_section_home_text">
+                    <h3>Lugares Favoritos</h3>
+                    <button>+Agregar Lugar</button>
+                </div>
+                <div class="user_fav_route_home_container ">
+                    <div class="user_fav_route_home_content">
+                        <div class="user_fav_route_home_content_text">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <label for="">Casa</label>
+                        </div>
+                        <button>-</button>
+                    </div>
+                    <div class="user_fav_route_home_content">
+                        <div class="user_fav_route_home_content_text">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <label for="">Trabajo</label>
+                        </div>
+                        <button>-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="user_recent_route_home_section user_side_section_inactive"><!-- /* Historial de Rutas Home */ -->
+                <div class="user_side_section_home_text">
+                    <h3>Historial</h3>
+                </div>
+                <div class="user_fav_route_home_container">
+                    <div class="user_recent_route_home_content">
+                        <h3>15/05/25</h3>
+                        <p>Lima Centro -> San Isidro</p>
+                        <div class="user_recent_route_home_time">
+                            <i class="fa-regular fa-clock"></i>
+                            <p>Estimado: <label for="">30 min</label></p>       
+                            <i class="fa-regular fa-clock"></i>
+                            <p>Real: <label for="">35 min</label></p>
+                        </div>
+                    </div>
+                    <div class="user_recent_route_home_content">
+                        <h3>13/05/25</h3>
+                        <p>San Miguel -> Surco</p>
+                        <div class="user_recent_route_home_time">
+                            <i class="fa-regular fa-clock"></i>
+                            <p>Estimado: <label for="">35 min</label></p>       
+                            <i class="fa-regular fa-clock"></i>
+                            <p>Real: <label for="">42 min</label></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+</body>
+</html>

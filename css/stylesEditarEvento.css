@@ -1,0 +1,236 @@
+/* Reset y tipografía */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+html {
+  font-family: 'Geologica', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  display: flex; flex-direction: column;
+  min-height: 100vh;
+  background: #f5f5f5; color: #031751;
+}
+
+/* Header */
+header {
+  position: fixed; top: 0; width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.nav-container {
+  max-width: 1480px; margin: 0 auto;
+  height: 4.063rem;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1rem;
+}
+.logo img { height: 40px; }
+.nav-links {
+  display: flex; gap: 1.5rem; list-style: none;
+}
+.nav-links a {
+  color: #031751; font-weight: 500; text-decoration: none;
+  transition: font-weight .3s;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  font-weight: 700;
+}
+.user-profile img {
+  width: 40px; height: 40px; border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Main */
+main.form-page {
+  flex: 1;
+  margin: 4.063rem auto 3rem;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 2rem 1rem; text-align: center;
+}
+main.form-page h1 {
+  font-size: 2.5rem; margin-bottom: 0.5rem;
+}
+main.form-page .subtitle {
+  color: #4a4b4e; font-size: 1rem;
+  margin-bottom: 2rem; line-height: 1.4;
+}
+
+/* Tarjeta */
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 2rem;
+  width: 100%; max-width: 480px;
+}
+
+/* Labels e inputs */
+.card label {
+  display: block; font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.card input[type="text"],
+.card input[type="time"],
+.card select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+}
+.card select {
+  background: #e5e7eb;
+  /* para la flecha nativa */
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%236b7280' viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M31.5 192h257c17.8 0 26.7 21.5 14.1 34.1l-128.5 128.5c-7.8 7.8-20.4 7.8-28.3 0L17.4 226.1C4.8 213.5 13.7 192 31.5 192z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+/* Horarios lado a lado */
+.horarios {
+  display: flex; gap: 1rem; margin-bottom: 1.5rem;
+}
+.horarios > div { flex: 1; }
+
+/* Recordatorio switch */
+.recordatorio {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.recordatorio .texto label {
+  margin-bottom: 0.25rem;
+}
+.recordatorio .texto small {
+  color: #6b7280; font-size: 0.875rem;
+}
+
+/* Toggle */
+.switch {
+  position: relative; display: inline-block;
+  width: 42px; height: 24px;
+}
+.switch input {
+  opacity: 0; width: 0; height: 0;
+}
+.slider {
+  position: absolute; cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #d1d5db;
+  border-radius: 999px; transition: 0.3s;
+}
+.slider::before {
+  position: absolute; content: '';
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: #fff; border-radius: 50%;
+  transition: 0.3s;
+}
+.switch input:checked + .slider {
+  background-color: #031751;
+}
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* Selector de colores */
+.colores {
+  display: flex; gap: 0.75rem; margin-bottom: 2rem;
+}
+.color-option {
+  position: relative;
+}
+.color-option input {
+  position: absolute; opacity: 0;
+  cursor: pointer; width: 100%; height: 100%;
+}
+.circle {
+  display: block; width: 32px; height: 32px;
+  border-radius: 50%; border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.color-option input:checked + .circle {
+  border-color: #031751;
+}
+.azul     { background: #3b82f6; }
+.rojo     { background: #ef4444; }
+.verde    { background: #10b981; }
+.amarillo { background: #f59e0b; }
+.morado   { background: #8b5cf6; }
+.rosa     { background: #ec4899; }
+
+/* Botón guardar */
+.btn-submit {
+  width: 100%; padding: 1rem;
+  background: #031751; color: #fff;
+  font-size: 1rem; font-weight: 600;
+  border: none; border-radius: 0.75rem;
+  cursor: pointer; transition: opacity .3s;
+}
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* ===== Botones Cancelar + Guardar ===== */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cancel {
+  padding: 0.75rem 1.5rem;
+  background: #ffffff;
+  color: #031751;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-cancel:hover {
+  background-color: #f0f2f5;
+}
+
+.btn-submit {
+  /* ya definido: asegúrate de que coincida con .btn-submit anterior */
+  padding: 0.75rem 1.5rem;
+  background: #031751;
+  color: #fff;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Eliminar enlace */
+.btn-delete {
+  background: none; border: none;
+  padding: 0; width: auto;
+  margin-top: 1.5rem;
+  color: #ef4444; font-size: 0.95rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  position: fixed; bottom: 0; width: 100%;
+  padding: 1rem 0; background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+}
+footer p {
+  font-size: 0.875rem; color: #4a4b4e;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .horarios { flex-direction: column; }
+}

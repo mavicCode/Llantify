@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendario - Llantify</title>
+
+  <!-- FullCalendar CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/stylesCalendarView.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav-container">
+      <div class="logo"><img src="assets/img/logo_llantify1.png" alt="Logo"/></div>
+      <ul class="nav-links">
+        <li><a href="home_page.html">Inicio</a></li>
+        <li><a href="#">Rutas</a></li>
+        <li><a href="#" class="active">Calendario</a></li>
+        <li><a href="#">Historial</a></li>
+        <li><a href="#">Actividad</a></li>
+      </ul>
+      <div class="user-profile"><img src="assets/img/default-avatar.png" alt="Perfil"/></div>
+    </nav>
+  </header>
+
+  <main class="calendar-view">
+    <section class="left-panel">
+      <div id="fc"></div>
+    </section>
+    <section class="right-panel">
+      <h2>Tus eventos guardados</h2>
+      <p class="subtitle">Gestiona tu horario académico y mantente organizado</p>
+      <div class="events-container">
+        <div class="event-card">
+          <div class="card-header">
+            <button class="icon-btn" title="Recordatorio">🔔</button>
+            <button class="icon-btn" title="Notas">📝</button>
+            <a href="edit_calendar.html?id=1" class="icon-btn" title="Editar">✏️</a>
+            <button class="icon-btn" title="Eliminar">🗑
+            </div>
+            <div class="card-body">
+              <span class="dot azul"></span>
+              <div class="info">
+                <h3>Matemáticas Avanzadas</h3>
+                <p class="when">Lunes • 09:00 – 10:30</p>
+                <p class="where">Aula 201</p>
+              </div>
+            </div>
+          </div>
+          <!-- añade aquí más .event-card -->
+        </div>
+      </section>
+      <a href="edit_calendar.html" class="fab">+</a>
+    </main>
+  
+    <footer>
+      <p>&copy; 2024 Llantify. Todos los derechos reservados.</p>
+    </footer>
+  
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const calendar = new FullCalendar.Calendar(document.getElementById('fc'), {
+          initialView: 'dayGridMonth',
+          locale: 'es',
+          height: 'auto',
+          events: [
+            { id:'1', title:'Matemáticas Avanzadas', start:'2024-11-15T09:00:00', end:'2024-11-15T10:30:00', color:'#3b82f6' }
+          ]
+        });
+        calendar.render();
+      });
+    </script>
+  
+  </body>
+  </html>
