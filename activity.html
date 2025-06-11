@@ -22,14 +22,15 @@
         <img src="assets/img/logo_llantify1.png" alt="Logo Llantify" />
       </div>
 
-        <nav class="nav">
-            <button class="nav-item" onclick="setActiveNav(this)">Inicio</button>
-            <button class="nav-item" onclick="setActiveNav(this)">Rutas</button>
-            <button class="nav-item" onclick="setActiveNav(this)">Calendario</button>
-            <button class="nav-item" onclick="setActiveNav(this)">Historial</button>
-            <button class="nav-item active" onclick="setActiveNav(this)">Actividad</button>
-        </nav>
+       <nav class="nav">
+  <a href="home_page.html" class="nav-item">Inicio</a>
+  <a href="rutas.html" class="nav-item">Rutas</a>
+  <a href="calendar.html" class="nav-item">Calendario</a>
+  <a href="historial.html" class="nav-item">Historial</a>
+  <a href="actividad.html" class="nav-item active">Actividad</a>
+</nav>
 
+        
         <div class="user-profile">
             <div class="avatar">JG</div>
             <span class="user-name">Junior Garcia</span>
@@ -151,15 +152,7 @@
     </main>
 
     <script>
-        function setActiveNav(element) {
-            // Remove active class from all nav items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            // Add active class to clicked item
-            element.classList.add('active');
-        }
-
+        
         function setActiveTab(element) {
             // Remove active class from all toggle buttons
             document.querySelectorAll('.toggle-btn').forEach(btn => {
