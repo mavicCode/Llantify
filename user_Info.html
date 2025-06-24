@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Llantify - Información General</title>
+
+  <!-- Google Font Geologica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/stylesActivity.css" />
+  <style>
+    .info-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .info-block {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-sub {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    .info-box {
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.95rem;
+      font-family: 'Geologica', sans-serif;
+      font-weight: 500;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="assets/img/logo_llantify1.png" alt="Logo Llantify" />
+    </div>
+
+    <nav class="nav">
+      <a href="home_page.html" class="nav-item">Inicio</a>
+      <a href="rutas.html" class="nav-item">Rutas</a>
+      <a href="calendar.html" class="nav-item">Calendario</a>
+      <a href="historial.html" class="nav-item">Historial</a>
+      <a href="actividad.html" class="nav-item">Actividad</a>
+    </nav>
+
+    <div class="user-profile">
+      <div class="avatar">JG</div>
+      <span class="user-name">Junior Garcia</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main-content">
+    <h1 class="stats-header">Información general</h1>
+
+    <div class="card info-container">
+
+      <!-- Estado del servicio -->
+      <div class="info-block">
+        <button class="toggle-btn active">Estado general del servicio</button>
+        <div class="info-box">Normal 🟢</div>
+      </div>
+
+      <!-- Información de ruta actual -->
+      <div class="info-block">
+        <button class="toggle-btn active">Información de la ruta actual</button>
+        <div class="info-sub">
+          <div><strong>13/05/2025</strong></div>
+          <div>San Miguel → Surco</div>
+          <div class="info-box">⏱ Tiempo estimado: 12 minutos</div>
+          <div class="info-box">Nivel de ocupación: 🟡</div>
+        </div>
+      </div>
+
+      <!-- Vehículos activos -->
+      <div class="info-block">
+        <button class="toggle-btn active">N° de vehículos en la ruta</button>
+        <div class="info-box">22 transportes activos 📍</div>
+      </div>
+
+      <!-- Tiempo de espera -->
+      <div class="info-block">
+        <button class="toggle-btn active">Tiempo estimado de espera</button>
+        <div class="info-box">5 minutos en el paradero ⏰</div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
