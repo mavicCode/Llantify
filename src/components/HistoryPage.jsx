@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './HistoryPage.css';
+import Header from './header';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
@@ -36,60 +37,73 @@ const HistoryPage = () => {
   };
 
   return (
-    <div className="history-container">
-      <h1>Mi historial de viajes</h1>
-      <div className="tabs">
-        <button
-          className={view === 'list' ? 'active' : ''}
-          onClick={() => setView('list')}
-        >
-          Lista
-        </button>
-        <button
-          className={view === 'chart' ? 'active' : ''}
-          onClick={() => setView('chart')}
-        >
-          Gráfico
-        </button>
-      </div>
+   <>
+      <Header userName="Junior García" />
 
-      {view === 'list' && (
-        <div className="list-view">
-          {travelData.map((t, i) => (
-            <div key={i} className="card">
-              <div className="card-header">
-                <span>{t.date}</span>
-                <span>&gt;</span>
-              </div>
-              <div className="card-body">
-                <p>{t.from} → {t.to}</p>
-                <div className="times">
-                  <span>
-                    ⏱ Estimado: {t.estimated} min
-                  </span>
-                  <span className={t.real > t.estimated ? 'late' : 'on-time'}>
-                    ⏱ Real: {t.real} min
-                  </span>
+      <div className="history-container">
+        <h1>Mi historial de viajes</h1>
+
+        <div className="tabs">
+          <button
+            className={view === 'list' ? 'active' : ''}
+            onClick={() => setView('list')}
+          >
+            Lista
+          </button>
+          <button
+            className={view === 'chart' ? 'active' : ''}
+            onClick={() => setView('chart')}
+          >
+            Gráfico
+          </button>
+        </div>
+
+        {view === 'list' && (
+          <div className="list-view">
+            {travelData.map((t, i) => (
+              <div key={i} className="card">
+                <div className="card-header">
+                  <span>{t.date}</span>
+                  <span>&gt;</span>
+                </div>
+                <div className="card-body">
+                  <p>
+                    {t.from} → {t.to}
+                  </p>
+                  <div className="times">
+                    <span>⏱ Estimado: {t.estimated} min</span>
+                    <span className={t.real > t.estimated ? 'late' : 'on-time'}>
+                      ⏱ Real: {t.real} min
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {view === 'chart' && (
-        <div className="chart-view">
-          <div className="chart-card">
-            <Line data={sampleGraphData} options={{
-              plugins: { legend: { position: 'bottom' } },
-              scales: { y: { suggestedMin: 0, suggestedMax: 60, title: { display: true, text: 'minutos' } } }
-            }} />
-            <button className="download-btn">Descargar informe</button>
+            ))}
           </div>
-        </div>
-      )}
-    </div>
-  );
-};
+        )}
 
+        {view === 'chart' && (
+          <div className="chart-view">
+            <div className="chart-card">
+              <Line
+                data={sampleGraphData}
+                options={{
+                  plugins: { legend: { position: 'bottom' } },
+                  scales: {
+                    y: {
+                      suggestedMin: 0,
+                      suggestedMax: 60,
+                      title: { display: true, text: 'minutos' }
+                    }
+                  }
+                }}
+              />
+              <button className="download-btn">Descargar informe</button>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+}
 export default HistoryPage;
