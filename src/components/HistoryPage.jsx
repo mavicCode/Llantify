@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-
+//styles
 const travelData = [
   { date: '12/05/2025', from: 'Barranco', to: 'San Borja', estimated: 25, real: 22 },
   { date: '13/05/2025', from: 'San Miguel', to: 'Surco', estimated: 35, real: 42 },

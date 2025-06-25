@@ -2,7 +2,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HistoryPage from "./components/HistoryPage.jsx";
-
+//styles
 
 const App = () => {
   return (
