@@ -29,10 +29,11 @@
                     </ul>
                 </div>
                 <div class="nav_user">
-                    <div class="nav_user_profile_container"><img src="" alt="" class="user_profile"></div> 
+                    <div class="nav_user_profile_container">    
+                        <img src="assets/img/default-avatar.png" alt="" class="user_profile"></div> 
                     <div class="user_dropdown">
                         <!-- /* Dropdown content */ -->
-                        <a href="profile.html" class="user_dropdown_link">Perfil</a>
+                        <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
                     </div>
                 </div>
             </div>
@@ -89,10 +90,10 @@
     <section class="user_fav_recent_routes_section">
         <div class="user_fav_recent_routes_container">
             <div class="user_fav_recent_buttons">
-                <button class="btn_fav_routes btn_home_active">Favoritos</button>
-                <button class="btn_recent_routes ">Historial</button>
+                <button class="btn_fav_routes btn_home_active" id="btn_fav_routes">Favoritos</button>
+                <button class="btn_recent_routes " id="btn_recent_routes">Historial</button>
             </div>
-            <div class="user_fav_route_home_section  "> <!-- /* Favoritos Home */ -->
+            <div class="user_fav_route_home_section  " id="user_fav_route_home_section"> <!-- /* Favoritos Home */ -->
                 <div class="user_side_section_home_text">
                     <h3>Lugares Favoritos</h3>
                     <button>+Agregar Lugar</button>
@@ -114,7 +115,7 @@
                     </div>
                 </div>
             </div>
-            <div class="user_recent_route_home_section user_side_section_inactive"><!-- /* Historial de Rutas Home */ -->
+            <div class="user_recent_route_home_section user_side_section_inactive" id="user_recent_route_home_section"><!-- /* Historial de Rutas Home */ -->
                 <div class="user_side_section_home_text">
                     <h3>Historial</h3>
                 </div>
@@ -145,4 +146,5 @@
     </section>
     </div>
 </body>
+<script src="src/home_page.js"></script>
 </html>
