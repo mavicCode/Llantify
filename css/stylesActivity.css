@@ -75,7 +75,7 @@ header {
 .nav-item.active::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: 5px;
     left: 0;
     right: 0;
     height: 2px;
@@ -83,31 +83,12 @@ header {
 }
 
 /* Perfil de usuario */
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.avatar {
+ .user-profile img {
     width: 40px;
     height: 40px;
-    background: #6c757d;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
     cursor: pointer;
-}
-
-.user-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #031751;
-}
+  }
 
 /* Contenido principal */
 .main-content {

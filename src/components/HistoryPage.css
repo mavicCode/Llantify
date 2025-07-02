@@ -1,0 +1,91 @@
+/* HistoryPage.css */
+/* HistoryPage.css */
+.history-container {
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .history-container h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #0F1D40;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .tabs button {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tabs button.active {
+    border-color: #5F2EEA;
+    font-weight: bold;
+  }
+  
+  .list-view .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .card-body p {
+    margin-bottom: 8px;
+    color: #0F1D40;
+  }
+  
+  .times span {
+    margin-right: 16px;
+    font-size: 14px;
+    color: #6B7280;
+  }
+  
+  .times .late {
+    color: #F04438;
+  }
+  
+  .times .on-time {
+    color: #16B364;
+  }
+  
+  .chart-view .chart-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 24px;
+    text-align: center;
+  }
+  
+  .download-btn {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: 1px solid #5F2EEA;
+    background: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5F2EEA;
+  }
+  
+  download-btn:hover {
+    background: rgba(95,46,234,0.1);
+  }
+  

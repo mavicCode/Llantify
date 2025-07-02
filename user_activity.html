@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad - Llantify</title>
+    <!-- Google Font Geologica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+     <link rel="stylesheet" href="css/stylesActivity.css" />
+    
+</head>
+<body>
+<header>
+  <div class="header">
+    <div class="logo">
+      <img src="assets/img/logo_llantify1.png" alt="Logo Llantify" />
+    </div>
+
+    <nav class="nav">
+      <a href="home_page.html" class="nav-item">Inicio</a>
+      <li><a href="/rutas">Rutas</a></li>
+      <a href="user_calendar.html" class="nav-item">Calendario</a>
+      <li><a href="/historial">Historial</a></li>
+      <a href="#user_activity.html" class="nav-item active">Actividad</a>
+    </nav>
+
+    <div class="user-profile">
+  <a href="user_profile.html">
+    <img src="assets/img/default-avatar.png" alt="Perfil de usuario" />
+  </a>
+</div>
+
+    </div>
+  </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="dashboard-grid">
+            <!-- Left Panel - Metrics -->
+            <div class="card">
+                <!-- Toggle Buttons -->
+                <div class="toggle-container">
+                    <button class="toggle-btn active" onclick="setActiveTab(this)">Mensual</button>
+                    <button class="toggle-btn" onclick="setActiveTab(this)">Semanal</button>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="metric-label">Tiempo Usado</div>
+                        <div class="metric-value">35 horas</div>
+                    </div>
+
+                    <div class="metric-item">
+                        <div class="metric-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="metric-label">Distancia Recorrida</div>
+                        <div class="metric-value">154.3 km</div>
+                    </div>
+
+                    <div class="metric-item">
+                        <div class="metric-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="metric-label">Gasto Total</div>
+                        <div class="metric-value">$131</div>
+                    </div>
+
+                    <div class="metric-item">
+                        <div class="metric-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="metric-label">Rutas Tomadas</div>
+                        <div class="metric-value">75</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Statistics -->
+            <div class="card">
+                <h2 class="stats-header">Estadísticas Mensual</h2>
+
+                <!-- Bar Chart -->
+                <div class="chart-container">
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 65%;">11</div>
+                        </div>
+                        <div class="bar-label">Lunes</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 29%;">5</div>
+                        </div>
+                        <div class="bar-label">Martes</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 82%;">14</div>
+                        </div>
+                        <div class="bar-label">Miércoles</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 47%;">8</div>
+                        </div>
+                        <div class="bar-label">Jueves</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 71%;">12</div>
+                        </div>
+                        <div class="bar-label">Viernes</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 100%;">17</div>
+                        </div>
+                        <div class="bar-label">Sábado</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar">
+                            <div class="bar-fill" style="height: 47%;">8</div>
+                        </div>
+                        <div class="bar-label">Domingo</div>
+                    </div>
+                </div>
+
+                <div class="chart-footer">Viajes en el mes</div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        
+        function setActiveTab(element) {
+            // Remove active class from all toggle buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Add active class to clicked button
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>
