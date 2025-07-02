@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Llantify - Rutas</title>
+
+  <!-- Google Font Geologica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/stylesActivity.css" />
+</head>
+<body>
+  
+  <!-- Header -->
+<header class="header">
+  <div class="logo">
+    <img src="assets/img/logo_llantify1.png" alt="Logo Llantify" />
+  </div>
+
+  <nav class="nav">
+    <a href="home_page.html" class="nav-item">Inicio</a>
+    <a href="rutas.html" class="nav-item">🚌Rutas</a>
+    <a href="calendar.html" class="nav-item">📆Calendario</a>
+    <a href="historial.html" class="nav-item">Historial</a>
+    <a href="actividad.html" class="nav-item">📰Actividad</a>
+    <a href="user_info.html" class="nav-item active">📊 Resumen</a>
+  </nav>
+
+  <div class="user-profile">
+    <div class="avatar">JG</div>
+    <span class="user-name">Junior Garcia</span>
+  </div>
+</header>
+
+  <!-- Main -->
+  <main class="main-content">
+    <div class="dashboard-grid">
+      
+      <!-- Izquierda: Formulario + Historial -->
+      <div class="card">
+        <!-- Formulario búsqueda -->
+        <div class="form-group">
+          <input type="text" placeholder="¿Desde dónde partes?" class="form-input" />
+          <input type="text" placeholder="¿A dónde vas?" class="form-input" />
+          <button class="toggle-btn active" style="width: 100%; margin-top: 1rem;">Buscar ruta</button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="toggle-container" style="margin-top: 2rem;">
+          <button class="toggle-btn">Favoritos</button>
+          <button class="toggle-btn active">Historial</button>
+        </div>
+
+        <!-- Historial -->
+        <div class="metrics-grid">
+          <div class="card" style="padding: 1rem;">
+            <p><strong>15/05/2025</strong></p>
+            <p>Lima Centro → San Isidro</p>
+            <p>🕒 Estimado: 30 | <span style="color:red;">Real: 35 min</span></p>
+          </div>
+          <div class="card" style="padding: 1rem;">
+            <p><strong>14/05/2025</strong></p>
+            <p>Miraflores → La Molina</p>
+            <p>🕒 Estimado: 40 | <span style="color:green;">Real: 38 min</span></p>
+          </div>
+          <div class="card" style="padding: 1rem;">
+            <p><strong>13/05/2025</strong></p>
+            <p>San Miguel → Surco</p>
+            <p>🕒 Estimado: 35 | <span style="color:red;">Real: 42 min</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Derecha: Mapa + rutas -->
+      <div class="card map-card">
+        <!-- Simulación de mapa -->
+        <div class="map-layout" style="position: relative; background-color: #cfe9ff; height: 300px; border-radius: 10px; overflow: hidden;">
+          <button class="toggle-btn" style="position: absolute; top: 1rem; left: 1rem;">Ubicación actual</button>
+          <div style="text-align: center; margin-top: 5rem;">
+            <h2 class="stats-header">Rutas Disponibles</h2>
+            <p>Selecciona una ruta para más detalles.</p>
+            <button class="toggle-btn active" style="margin-top: 1rem;">Seleccionar Ruta</button>
+          </div>
+          <div class="zoom-controls" style="position: absolute; bottom: 1rem; right: 1rem;">
+            <button class="zoom-btn">+</button>
+            <button class="zoom-btn">−</button>
+          </div>
+        </div>
+
+        <!-- Lista de rutas debajo -->
+        <div style="margin-top: 1.5rem;">
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              🚌 <strong>Ruta 101</strong><br />
+              <span>Centro - Norte</span>
+            </div>
+            <div style="text-align: right;">
+              Costo: <strong>S/1.50</strong><br />
+              Tiempo: 30 mins
+            </div>
+          </div>
+
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <div>
+              🚌 <strong>Ruta 102</strong><br />
+              <span>Centro - Sur</span>
+            </div>
+            <div style="text-align: right;">
+              Costo: <strong>S/1.80</strong><br />
+              Tiempo: 25 mins
+            </div>
+          </div>
+
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <div>
+              🚌 <strong>Ruta 105</strong><br />
+              <span>Centro - Este</span>
+            </div>
+            <div style="text-align: right;">
+              Costo: <strong>S/2.00</strong><br />
+              Tiempo: 35 mins
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
