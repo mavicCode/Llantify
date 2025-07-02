@@ -53,6 +53,17 @@
 .nav_list li a:hover{
     font-weight: bold;
 }
+.user_profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.user_profile:hover {
+  transform: scale(1.1);
+}
 .nav_auth{
     display: flex;
     align-items: center;
