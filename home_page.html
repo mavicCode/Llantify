@@ -21,7 +21,7 @@
                 </div>
                 <div class="div_nav_list">
                     <ul class="nav_list">
-                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="home_page.html">Inicio</a></li>
                         <li><a href="/rutas">Rutas</a></li>
                         <li><a href="user_calendar.html">Calendario</a></li>
                         <li><a href="/historial">Historial</a></li>
@@ -63,25 +63,23 @@
                 <h2>Mapa de Rutas</h2>
             </div>
             <div class="user_map">
-                <div class="user_map_place">
-                    <p>Mapa de rutas aquí</p>
-                </div>        
+               <div class="user_map_place" id="map"></div>      
             </div>
             <div class="user_route_info">
                 <div class=" user_route_info_card user_route_info_time">
                     <i class="fa-solid fa-clock route_info_icon"></i>
                     <p>Tiempo de Llegada</p>
-                    <label for="">23min</label>
+                    <label for="">0min</label>
                 </div>
                 <div class=" user_route_info_card user_route_info_distance">
                     <i class="fa-solid fa-route route_info_icon"></i>
                     <p>Distancia</p>
-                    <label for="">7.2km</label>
+                    <label for="">km</label>
                 </div>
                 <div class=" user_route_info_card user_route_info_cost">
                     <i class="fa-solid fa-dollar-sign route_info_icon"></i>
                     <p>Costo Total</p>
-                    <label for="">$42</label>
+                    <label for="">$0</label>
                 </div>
             </div>
         </div>
@@ -96,23 +94,13 @@
             <div class="user_fav_route_home_section  " id="user_fav_route_home_section"> <!-- /* Favoritos Home */ -->
                 <div class="user_side_section_home_text">
                     <h3>Lugares Favoritos</h3>
-                    <button>+Agregar Lugar</button>
+                    <div class="fav-actions">
+                        <button id="btn_agregar_lugar">Agregar lugar</button>
+                        <span id="contador_favoritos">0/5</span>
+                    </div>
                 </div>
                 <div class="user_fav_route_home_container ">
-                    <div class="user_fav_route_home_content">
-                        <div class="user_fav_route_home_content_text">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <label for="">Casa</label>
-                        </div>
-                        <button>-</button>
-                    </div>
-                    <div class="user_fav_route_home_content">
-                        <div class="user_fav_route_home_content_text">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <label for="">Trabajo</label>
-                        </div>
-                        <button>-</button>
-                    </div>
+
                 </div>
             </div>
             <div class="user_recent_route_home_section user_side_section_inactive" id="user_recent_route_home_section"><!-- /* Historial de Rutas Home */ -->
@@ -144,7 +132,24 @@
             </div>
         </div>
     </section>
+    <!-- Modal para agregar lugar favorito -->
+    <div id="modal_favorito" class="modal_favorito">
+      <div class="modal_favorito_content">
+        <span class="modal_favorito_close" id="close_modal_favorito">&times;</span>
+        <h2>Agregar lugar favorito</h2>
+        <form id="form_favorito">
+          <label for="nombre_favorito">Nombre</label>
+          <input type="text" id="nombre_favorito" placeholder="Ej. Casa, Oficina" required>
+          <label for="direccion_favorito">Dirección</label>
+          <input type="text" id="direccion_favorito" placeholder="Ej. Av. Arequipa 123" required>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
     </div>
 </body>
 <script src="src/home_page.js"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApksAisJJIHw4b0VXDzGb3uORhoeKaV7M&libraries=places&callback=initMap">
+</script>
 </html>
