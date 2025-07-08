@@ -1,53 +1,66 @@
-* { margin:0; padding:0; box-sizing:border-box; }
-    html, body { height:100%; }
-    html { font-family:'Geologica',sans-serif; scroll-behavior:smooth; }
-    body { display:flex; flex-direction:column; background:#f5f5f5; }
-/* --- NAVBAR UNIFICADO --- */
-.div_nav{
-    width: 100%;
-    height: 4.063rem;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;z-index: 1000;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.div_nav_list{
-    font-weight: 300;
+html, body {
+  height: 100%;
 }
-.nav_logo{
-    display: flex;
-    color: #000;
-    width: 12rem;
-    justify-content: center;
-    margin-left: 1rem;
+body {
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  font-family: 'Geologica', sans-serif;
 }
-.nav_logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+
+/* Navbar unificado */
+.div_nav {
+  width: 100%;
+  height: 4.063rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 0 1rem;
 }
-.nav_list{
-    display: flex;
-    align-items: center;
+.nav_logo img {
+  height: 2.5rem;
 }
-.nav_list li{
-    text-align: center;
-    width: 7.5rem;
+.div_nav_list .nav_list {
+  display: flex;
+  gap: 2rem;
 }
-.nav_list li a{
-    color: #031751;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
+.nav_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav_list li a:hover{
-    font-weight: bold;
+.nav_list li a {
+  color: #031751;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav_list li a.active,
+.nav_list li a:hover {
+  font-weight: 700;
+}
+.nav_user_profile_container {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #031751;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .user_profile {
-  width: 40px;
-  height: 40px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.3s;
@@ -55,144 +68,142 @@
 .user_profile:hover {
   transform: scale(1.1);
 }
-.nav_auth{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: 20px;
-    width: 16.25rem;
-}
-.nav_user{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: 3.8rem;
-    width: 8rem;
-}
-.nav_user_profile_container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: #031751;
-}
-.nav_auth_login{
-    background-color: #031751;
-    color: #fff;
-    padding: 12px 10px;
-    width: 8.125rem;
-    text-align: center;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-.nav_auth_login:hover{
-    font-weight: bold;
-}
-.nav_auth_signup{
-    background-color: #fff;
-    color: #031751;
-    padding: 10px 10px;
-    border-radius: 10px; 
-    width: 7.5rem;
-    text-align: center;
-    border: 2px solid #031751;
-    transition: all 0.3s ease-in-out;
-}
-.nav_auth_signup:hover{
-    font-weight: bold;
-}
-/* --- FIN NAVBAR UNIFICADO --- */
-    /* HEADER */
-    header {
-      position:fixed; top:0; left:0; right:0;
-      height:4.063rem;
-      background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.1);
-      z-index:1000;
-    }
-    .nav-container {
-      max-width:1400px; margin:0 auto;
-      height:100%; display:flex; align-items:center; justify-content:space-between;
-      padding:0 0.5rem;
-    }
-    .nav-links { display:flex; gap:1.5rem; list-style:none; }
-    .nav-links a { color:#031751; font-weight:500; text-decoration:none; }
-    .nav-links a.active, .nav-links a:hover { font-weight:700; }
-    .logo img { height:40px; }
-    .user-profile img { width:40px; height:40px; border-radius:50%; }
 
-    /* MAIN LAYOUT */
-    main.calendar-view {
-      display:flex; justify-content:center; align-items:flex-start;
-      gap:2rem;
-      max-width:1000px; width:100%;
-      margin: calc(4.063rem + 1rem) auto 3rem;
-      padding:0 1rem;
-    }
-    /* izquierda */
-    .left-panel {
-      flex:1; min-width:320px;
-      background:#fff; border-radius:1rem;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-      padding:1rem; 
-    }
-    /* derecha */
-    .right-panel {
-      flex:1; min-width:320px;
-      display:flex; flex-direction:column;
-    }
-    .right-panel h2 { font-size:1.5rem; margin-bottom:.25rem; }
-    .right-panel .subtitle { color:#4a4b4e; margin-bottom:1rem; }
-    .events-container {
-      flex:1; overflow-y:auto; padding-right:.5rem;
-    }
+/* Layout principal */
+main.calendar-view {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: calc(4.063rem + 1rem) auto 3rem;
+  padding: 0 1rem;
+}
 
-    /* EVENT-CARD */
-    .event-card {
-      background:#fff; border-radius:.75rem;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-      margin-bottom:1rem; overflow:hidden;
-    }
-    .card-header {
-      background:#f9fafb; padding:.5rem;
-      display:flex; justify-content:flex-end; gap:.5rem;
-    }
-    .icon-btn {
-      background:transparent; border:none; cursor:pointer;
-      width:24px; height:24px;
-    }
-    .card-body {
-      display:flex; align-items:center; padding:1rem;
-    }
-    .dot {
-      width:8px; height:8px; border-radius:50%;
-      margin-right:1rem; flex-shrink:0;
-    }
-    .azul    { background:#3b82f6; }
-    .rojo    { background:#ef4444; }
-    .verde   { background:#10b981; }
-    .amarillo{ background:#f59e0b; }
-    .morado  { background:#8b5cf6; }
-    .rosa    { background:#ec4899; }
-    .info h3 { font-size:1.125rem; margin-bottom:.25rem; }
-    .info .when, .info .where {
-      font-size:.875rem; color:#6b7280; margin-bottom:.25rem;
-    }
+/* Panel izquierdo (Calendario) */
+.left-panel {
+  flex: 1;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1rem;
+}
 
-    /* FAB */
-    .fab {
-      position:fixed; right:1.5rem; bottom:4.5rem;
-      width:56px; height:56px; background:#031751; color:#fff;
-      font-size:2rem; line-height:56px; text-align:center;
-      border-radius:50%; text-decoration:none;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    }
+/* Panel derecho (Lista de eventos) */
+.right-panel {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.right-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.right-panel .subtitle {
+  color: #4a4b4e;
+  margin-bottom: 1rem;
+}
+.events-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
 
-    /* FOOTER */
-    footer {
-      position:fixed; bottom:0; left:0; right:0;
-      background:#fff; border-top:1px solid rgba(0,0,0,0.1);
-      text-align:center; padding:1rem 0;
-    }
-    footer p { color:#4a4b4e; font-size:.875rem; }
+/* Tarjeta de evento */
+.event-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.card-header {
+  background: #f9fafb;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
+}
+.card-body {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.dot.azul     { background: #3b82f6; }
+.dot.rojo     { background: #ef4444; }
+.dot.verde    { background: #10b981; }
+.dot.amarillo { background: #f59e0b; }
+.dot.morado   { background: #8b5cf6; }
+.dot.rosa     { background: #ec4899; }
+
+.info h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+.info .when,
+.info .where {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.info .where::before {
+  content: '📍';
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 4.5rem;
+  width: 56px;
+  height: 56px;
+  background: #031751;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Leyenda de eventos debajo del calendario */
+.calendar-legend {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.calendar-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #031751;
+}
+.calendar-legend .legend-item .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
