@@ -46,7 +46,7 @@ tabs.forEach(btn=>btn.addEventListener('click',()=>{
   document.getElementById(btn.dataset.tab).style.display='block';
 }));
 
-// Descargar informe (PDF export podría implementarse aquí)
+// Descargar informe 
 document.getElementById('downloadReport').addEventListener('click',()=>{
   alert('Funcionalidad de descarga aún no implementada.');
 });
