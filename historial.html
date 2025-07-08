@@ -1,0 +1,70 @@
+<!-- historial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Llantify - Historial de viajes</title>
+  <!-- Google Font Geologica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/historial.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- header/nav igual a rutas -->
+  <header>
+    <nav>
+      <div class="div_nav">
+        <div class="nav_logo">
+          <a href="home_page.html">
+            <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img" />
+          </a>
+        </div>
+        <div class="div_nav_list">
+          <ul class="nav_links">
+            <li><a href="home_page.html">Inicio</a></li>
+            <li><a href="rutas.html">Rutas</a></li>
+            <li><a href="user_calendar.html">Calendario</a></li>
+            <li><a href="historial.html" class="active">Historial</a></li>
+            <li><a href="user_activity.html">Actividad</a></li>
+          </ul>
+        </div>
+        <div class="nav_user">
+          <div class="nav_user_profile_container">
+            <img src="assets/img/default-avatar.png" alt="" class="user_profile" />
+          </div>
+          <div class="user_dropdown">
+            <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h1>Mi historial de viajes</h1>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="lista">Lista</button>
+        <button class="tab-btn" data-tab="grafico">Gráfico</button>
+      </div>
+      <!-- Tab content: Lista -->
+      <div class="tab-content" id="lista">
+        <div class="cards" id="history-list"></div>
+      </div>
+      <!-- Tab content: Gráfico -->
+      <div class="tab-content" id="grafico" style="display:none;">
+        <div class="chart-card">
+          <canvas id="travelChart"></canvas>
+          <button id="downloadReport" class="btn-download">Descargar informe</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="src/historial.js"></script>
+</body>
+</html>
