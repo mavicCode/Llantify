@@ -8,37 +8,81 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styleProfile.css" />
+  <style>
+    .profile-header h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #031751;
+    }
+
+    .action-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      padding: 0 40px;
+    }
+
+    .cancel-btn, .save-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cancel-btn {
+      background-color: white;
+      border: 1px solid #031751;
+      color: #031751;
+    }
+
+    .cancel-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .save-btn {
+      background-color: #031751;
+      color: white;
+    }
+
+    .save-btn:hover {
+      background-color: #001a4d;
+    }
+  </style>
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="header">
     <nav>
-            <div class="div_nav">
-                <div class="nav_logo"> 
-                    <a href="home_page.html">
-                        <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img">
-                    </a>
-                </div>
-                <div class="div_nav_list">
-                    <ul class="nav_list">
-                        <li><a href="home_page.html">Inicio</a></li>
-                        <li><a href="/rutas">Rutas</a></li>
-                        <li><a href="user_calendar.html">Calendario</a></li>
-                        <li><a href="/historial">Historial</a></li>
-                        <li><a href="user_activity.html">Actividad</a></li>
-                    </ul>
-                </div>
-                <div class="nav_user">
-                    <div class="nav_user_profile_container">    
-                        <img src="assets/img/default-avatar.png" alt="" class="user_profile"></div> 
-                    <div class="user_dropdown">
-                        <!-- /* Dropdown content */ -->
-                        <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+      <div class="div_nav">
+        <div class="nav_logo">
+          <a href="home_page.html">
+            <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img">
+          </a>
+        </div>
+        <div class="div_nav_list">
+          <ul class="nav_list">
+            <li><a href="home_page.html">Inicio</a></li>
+            <li><a href="/rutas">Rutas</a></li>
+            <li><a href="user_calendar.html">Calendario</a></li>
+            <li><a href="/historial">Historial</a></li>
+            <li><a href="user_activity.html">Actividad</a></li>
+          </ul>
+        </div>
+        <div class="nav_user">
+          <div class="nav_user_profile_container">
+            <img src="assets/img/default-avatar.png" alt="" class="user_profile" id="navbarProfileImg">
+          </div>
+          <div class="user_dropdown">
+            <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
+          </div>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!-- MAIN -->
@@ -48,24 +92,25 @@
       <div class="profile-card animate">
         <div class="profile-header">
           <div class="profile-avatar">
-            <img src="assets/img/default-avatar.png" alt="Avatar perfil" />
+            <img src="assets/img/default-avatar.png" alt="Avatar perfil" id="avatarPreview" />
           </div>
-          <h2>Junior Garcia</h2>
+          <h2 id="nombreCompleto">Junior Garcia</h2>
         </div>
 
         <div class="form-group">
           <label>Nombre</label>
-          <input type="text" value="Junior" />
+          <input type="text" id="nombreInput" value="Junior" />
         </div>
 
         <div class="form-group">
           <label>Apellido</label>
-          <input type="text" value="Garcia" />
+          <input type="text" id="apellidoInput" value="Garcia" />
         </div>
 
         <div class="form-group">
           <label>Cambiar foto de perfil</label>
-          <div class="upload-box">📤</div>
+          <div class="upload-box" id="uploadBox">📤</div>
+          <input type="file" id="fotoPerfilInput" accept="image/*" style="display: none;" />
         </div>
       </div>
 
@@ -90,8 +135,45 @@
 
     <div class="action-buttons">
       <button class="cancel-btn">Cancelar</button>
-      <button class="save-btn">Guardar cambios</button>
+      <button class="save-btn" id="guardarCambiosBtn">Guardar cambios</button>
     </div>
   </main>
+
+  <script>
+    const nombreInput = document.getElementById("nombreInput");
+    const apellidoInput = document.getElementById("apellidoInput");
+    const nombreCompleto = document.getElementById("nombreCompleto");
+
+    const uploadBox = document.getElementById("uploadBox");
+    const inputFoto = document.getElementById("fotoPerfilInput");
+    const avatarPreview = document.getElementById("avatarPreview");
+
+    document.getElementById("guardarCambiosBtn").addEventListener("click", () => {
+      const nuevoNombre = nombreInput.value.trim();
+      const nuevoApellido = apellidoInput.value.trim();
+      nombreCompleto.textContent = `${nuevoNombre} ${nuevoApellido}`;
+    });
+
+    uploadBox.addEventListener("click", () => {
+      inputFoto.click();
+    });
+
+    inputFoto.addEventListener("change", () => {
+  const archivo = inputFoto.files[0];
+  if (archivo) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      avatarPreview.src = e.target.result;
+
+      // 👇 Esto actualiza también el de la navbar
+      const navbarProfileImg = document.getElementById("navbarProfileImg");
+      if (navbarProfileImg) {
+        navbarProfileImg.src = e.target.result;
+      }
+    };
+    reader.readAsDataURL(archivo);
+  }
+});
+  </script>
 </body>
 </html>
