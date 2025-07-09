@@ -1,0 +1,76 @@
+// index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llantify - Elige tu ruta</title>
+  <!-- Google Font Geologica -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reportRutas.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="div_nav">
+        <div class="nav_logo">
+          <a href="home_page.html">
+            <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img">
+          </a>
+        </div>
+        <div class="div_nav_list nav-container">
+          <ul class="nav_list nav-links">
+            <li><a href="home_page.html">Inicio</a></li>
+            <li><a href="rutas.html" class="active">Rutas</a></li>
+            <li><a href="user_calendar.html">Calendario</a></li>
+            <li><a href="historial.html">Historial</a></li>
+            <li><a href="user_activity.html">Actividad</a></li>
+          </ul>
+        </div>
+        <div class="nav_user">
+          <div class="nav_user_profile_container">
+            <img src="assets/img/default-avatar.png" alt="" class="user_profile">
+          </div>
+          <div class="user_dropdown">
+            <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <header>
+        <h1>Elige tu ruta</h1>
+      </header>
+      <div class="search-wrap">
+        <input id="search" type="text" placeholder="Origen / Destino">
+        <span class="icon-search">🔍</span>
+      </div>
+      <div class="cards" id="cards"></div>
+    </div>
+    <button class="btn-report" id="openModal">+</button>
+
+    <!-- Modal reportar ruta -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h2>Reportar nueva ruta</h2>
+        <label for="origen">Origen</label>
+        <input id="origen" placeholder="Ej. Av. Arequipa 123">
+        <label for="destino">Destino</label>
+        <input id="destino" placeholder="Ej. Av. Arequipa 123">
+        <label>¿Cómo va el servicio?</label>
+        <div class="modal-actions">
+          <button class="send" data-status="full">Sí, va lleno</button>
+          <button class="send" data-status="empty">No, hay espacio</button>
+        </div>
+        <button class="cancel" id="cancel">Cerrar</button>
+      </div>
+    </div>
+  </main>
+  <script src="src/reportRutas.js"></script>
+</body>
+</html>

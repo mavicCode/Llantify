@@ -12,6 +12,7 @@
   />
   <link rel="stylesheet" href="css/stylesEditarEvento.css" />
 </head>
+<script src="src/edit_calendar.js"></script>
 <body>
   <!-- Header -->
   <header>
@@ -25,9 +26,9 @@
                 <div class="div_nav_list">
                     <ul class="nav_list">
                         <li><a href="home_page.html">Inicio</a></li>
-                        <li><a href="/rutas">Rutas</a></li>
+                        <li><a href="reportRuta.html">Rutas</a></li>
                         <li><a href="user_calendar.html">Calendario</a></li>
-                        <li><a href="/historial">Historial</a></li>
+                        <li><a href="historial.html">Historial</a></li>
                         <li><a href="user_activity.html">Actividad</a></li>
                         <li><a href="user_Info.html">Info</a></li>
                     </ul>
@@ -50,7 +51,7 @@
     <p class="subtitle">Modifica los detalles de tu evento de manera fácil y rápida.</p>
 
     <div class="card">
-      <form action="#" method="post">
+      <form id="formEditarEvento">
         <!-- Nombre -->
         <label for="nombre">Nombre de la clase / evento</label>
         <input
@@ -139,15 +140,11 @@
           </div>
         </form>
       <!-- Eliminar -->
-      <button class="btn-delete" onclick="alert('Evento eliminado')">
+      <button id="btnEliminar" class="btn-delete" onclick="alert('Evento eliminado')">
         Eliminar evento
       </button>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Llantify. Todos los derechos reservados.</p>
-  </footer>
 </body>
 </html>
