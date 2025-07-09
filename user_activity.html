@@ -1,178 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad - Llantify</title>
-    <!-- Google Font Geologica -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad - Llantify</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-     <link rel="stylesheet" href="css/stylesActivity.css" />
-    
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/stylesActivity.css" />
 </head>
 <body>
-<header>
-  <nav>
-            <div class="div_nav">
-                <div class="nav_logo"> 
-                    <a href="home_page.html">
-                        <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img">
-                    </a>
-                </div>
-                <div class="div_nav_list">
-                    <ul class="nav_list">
-                        <li><a href="home_page.html">Inicio</a></li>
-                        <li><a href="reportRuta.html">Rutas</a></li>
-                        <li><a href="user_calendar.html">Calendario</a></li>
-                        <li><a href="historial.html">Historial</a></li>
-                        <li><a href="user_activity.html">Actividad</a></li>
-                        <li><a href="user_Info.html">Info</a></li>
-                    </ul>
-                </div>
-                <div class="nav_user">
-                    <div class="nav_user_profile_container">    
-                        <img src="assets/img/default-avatar.png" alt="" class="user_profile"></div> 
-                    <div class="user_dropdown">
-                        <!-- /* Dropdown content */ -->
-                        <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-</div>
-
-    </div>
-  </div>
-</header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="dashboard-grid">
-            <!-- Left Panel - Metrics -->
-            <div class="card">
-                <!-- Toggle Buttons -->
-                <div class="toggle-container">
-                    <button class="toggle-btn active" onclick="setActiveTab(this)">Mensual</button>
-                    <button class="toggle-btn" onclick="setActiveTab(this)">Semanal</button>
-                </div>
-
-                <!-- Metrics Grid -->
-                <div class="metrics-grid">
-                    <div class="metric-item">
-                        <div class="metric-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12,6 12,12 16,14"></polyline>
-                            </svg>
-                        </div>
-                        <div class="metric-label">Tiempo Usado</div>
-                        <div class="metric-value">35 horas</div>
-                    </div>
-
-                    <div class="metric-item">
-                        <div class="metric-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="metric-label">Distancia Recorrida</div>
-                        <div class="metric-value">154.3 km</div>
-                    </div>
-
-                    <div class="metric-item">
-                        <div class="metric-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <line x1="12" y1="1" x2="12" y2="23"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
-                        </div>
-                        <div class="metric-label">Gasto Total</div>
-                        <div class="metric-value">$131</div>
-                    </div>
-
-                    <div class="metric-item">
-                        <div class="metric-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="metric-label">Rutas Tomadas</div>
-                        <div class="metric-value">75</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Panel - Statistics -->
-            <div class="card">
-                <h2 class="stats-header">Estadísticas Mensual</h2>
-
-                <!-- Bar Chart -->
-                <div class="chart-container">
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 65%;">11</div>
-                        </div>
-                        <div class="bar-label">Lunes</div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 29%;">5</div>
-                        </div>
-                        <div class="bar-label">Martes</div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 82%;">14</div>
-                        </div>
-                        <div class="bar-label">Miércoles</div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 47%;">8</div>
-                        </div>
-                        <div class="bar-label">Jueves</div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 71%;">12</div>
-                        </div>
-                        <div class="bar-label">Viernes</div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 100%;">17</div>
-                        </div>
-                        <div class="bar-label">Sábado</div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar">
-                            <div class="bar-fill" style="height: 47%;">8</div>
-                        </div>
-                        <div class="bar-label">Domingo</div>
-                    </div>
-                </div>
-
-                <div class="chart-footer">Viajes en el mes</div>
-            </div>
+  <header>
+    <nav>
+      <div class="div_nav">
+        <div class="nav_logo">
+          <a href="home_page.html">
+            <img src="assets/img/logo_llantify1.png" alt="Llantify Logo" class="nav_logo_img" />
+          </a>
         </div>
-    </main>
+        <div class="div_nav_list">
+          <ul class="nav_list">
+            <li><a href="home_page.html">Inicio</a></li>
+            <li><a href="user_calendar.html">Calendario</a></li>
+            <li><a href="historial.html">Historial</a></li>
+            <li><a href="user_activity.html">Actividad</a></li>
+            <li><a href="user_Info.html">Info</a></li>
+          </ul>
+        </div>
+        <div class="nav_user">
+          <div class="nav_user_profile_container">
+            <img src="assets/img/default-avatar.png" alt="" class="user_profile" />
+          </div>
+          <div class="user_dropdown">
+            <a href="user_profile.html" class="user_dropdown_link">Perfil</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <script>
-        
-        function setActiveTab(element) {
-            // Remove active class from all toggle buttons
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            // Add active class to clicked button
-            element.classList.add('active');
-        }
-    </script>
+  <main class="main-content">
+    <div class="dashboard-grid">
+      <!-- Panel Izquierdo -->
+      <div class="card">
+        <div class="toggle-container">
+          <button class="toggle-btn" onclick="setActiveTab(this)">Mensual</button>
+          <button class="toggle-btn active" onclick="setActiveTab(this)">Semanal</button>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-icon">🕒</div>
+            <div class="metric-label">Tiempo Usado</div>
+            <div class="metric-value" id="tiempo-valor">--</div>
+          </div>
+
+
+          <div class="metric-item">
+            <div class="metric-icon">📍</div>
+            <div class="metric-label">Distancia Recorrida</div>
+            <div class="metric-value" id="distancia-valor">--</div>
+          </div>
+
+          <div class="metric-item">
+            <div class="metric-icon">💵</div>
+            <div class="metric-label">Gasto Total</div>
+            <div class="metric-value" id="gasto-valor">--</div>
+          </div>
+
+          <div class="metric-item">
+            <div class="metric-icon">🚌</div>
+            <div class="metric-label">Rutas Tomadas</div>
+            <div class="metric-value" id="rutas-valor">--</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel Derecho -->
+      <div class="card">
+        <h2 class="stats-header">Estadísticas Semanal</h2>
+        <button id="btn_reiniciar_estadisticas" class="reiniciar-btn">Reiniciar</button>
+        <div class="chart-container">
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-lunes">0</div></div><div class="bar-label">Lunes</div></div>
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-martes">0</div></div><div class="bar-label">Martes</div></div>
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-miercoles">0</div></div><div class="bar-label">Miércoles</div></div>
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-jueves">0</div></div><div class="bar-label">Jueves</div></div>
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-viernes">0</div></div><div class="bar-label">Viernes</div></div>
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-sabado">0</div></div><div class="bar-label">Sábado</div></div>
+          <div class="bar-item"><div class="bar"><div class="bar-fill" id="bar-domingo">0</div></div><div class="bar-label">Domingo</div></div>
+        </div>
+
+        <div class="chart-footer">Viajes en la semana</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="src/activity.js"></script>
 </body>
 </html>

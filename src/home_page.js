@@ -138,7 +138,7 @@ function calcularRuta(origen, destino) {
       const distanciaKm = leg.distance.value / 1000;
       const duracionMin = leg.duration.value / 60;
 
-      // Guardar información clave en localStorage para otra vista
+
       const rutaSeleccionada = {
         origen: leg.start_address,
         destino: leg.end_address,
@@ -147,13 +147,18 @@ function calcularRuta(origen, destino) {
         costo: calcularCosto(distanciaKm, duracionMin),
         fecha: new Date().toLocaleDateString("es-PE")
       };
-      localStorage.setItem("rutaSeleccionada", JSON.stringify(rutaSeleccionada));
+
+
+
 
       document.querySelector(".user_route_info_time label").textContent = `${Math.round(duracionMin)} min`;
       document.querySelector(".user_route_info_distance label").textContent = `${distanciaKm.toFixed(1)} km`;
 
       const costo = calcularCosto(distanciaKm, duracionMin);
       document.querySelector(".user_route_info_cost label").textContent = `$${costo}`;
+     
+document.getElementById("btn_seleccionar_ruta").style.display = "inline-block";
+
     } else {
       alert("No se pudo calcular la ruta");
     }
@@ -168,6 +173,57 @@ function mostrarBotonesAlternativas(response) {
     contenedor.id = "alternativas_ruta";
     contenedor.style.margin = "10px 0";
     document.querySelector(".user_map_container")?.appendChild(contenedor);
+
+let botonSeleccion = document.getElementById("btn_seleccionar_ruta");
+if (!botonSeleccion) {
+  botonSeleccion = document.createElement("button");
+  botonSeleccion.id = "btn_seleccionar_ruta";
+  botonSeleccion.className = "btn-seleccionar-ruta";
+  botonSeleccion.textContent = "Seleccionar esta ruta";
+  botonSeleccion.style.display = "none";
+  botonSeleccion.style.marginTop = "10px";
+  contenedor.insertAdjacentElement("afterend", botonSeleccion);
+
+  // ←↓↓↓↓ AGREGAR AQUÍ EL EVENTO:
+  botonSeleccion.addEventListener("click", () => {
+    const rutaSeleccionada = JSON.parse(localStorage.getItem("rutaSeleccionada"));
+    if (!rutaSeleccionada) {
+      alert("Primero busca y selecciona una ruta válida.");
+      return;
+    }
+
+    let actividad = JSON.parse(localStorage.getItem("actividadLlantify")) || {
+      tiempo: 0,
+      distancia: 0,
+      gasto: 0,
+      rutas: 0,
+      viajesPorDia: {
+        lunes: 0, martes: 0, miercoles: 0, jueves: 0,
+        viernes: 0, sabado: 0, domingo: 0
+      },
+      viajesPorSemana: [0, 0, 0, 0]
+    };
+
+    actividad.tiempo += rutaSeleccionada.duracionMin;
+    actividad.distancia += parseFloat(rutaSeleccionada.distanciaKm);
+    actividad.gasto += rutaSeleccionada.costo;
+    actividad.rutas += 1;
+
+    const diasSemana = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
+    const fecha = new Date();
+    const diaNombre = diasSemana[fecha.getDay()];
+    actividad.viajesPorDia[diaNombre] += 1;
+
+    const semanaDelMes = Math.floor((fecha.getDate() - 1) / 7);
+    actividad.viajesPorSemana[semanaDelMes] += 1;
+
+    localStorage.setItem("actividadLlantify", JSON.stringify(actividad));
+    alert("Ruta registrada correctamente en la actividad.");
+  });
+}
+
+botonSeleccion.style.display = "inline-block";
+
   }
   contenedor.innerHTML = "";
 
@@ -262,3 +318,37 @@ function mostrarFavoritosEnMapa() {
     });
   });
 }
+
+document.getElementById("btn_seleccionar_ruta").addEventListener("click", () => {
+  const rutaSeleccionada = JSON.parse(localStorage.getItem("rutaSeleccionada"));
+  if (!rutaSeleccionada) {
+    alert("Primero busca y selecciona una ruta válida.");
+    return;
+  }
+
+  let actividad = JSON.parse(localStorage.getItem("actividadLlantify")) || {
+    tiempo: 0,
+    distancia: 0,
+    gasto: 0,
+    rutas: 0,
+    viajesPorDia: { lunes: 0, martes: 0, miercoles: 0, jueves: 0, viernes: 0, sabado: 0, domingo: 0 },
+    viajesPorSemana: [0, 0, 0, 0]
+  };
+
+  actividad.tiempo += rutaSeleccionada.duracionMin;
+  actividad.distancia += parseFloat(rutaSeleccionada.distanciaKm);
+  actividad.gasto += rutaSeleccionada.costo;
+  actividad.rutas += 1;
+
+  const diasSemana = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
+  const fecha = new Date();
+  const diaNombre = diasSemana[fecha.getDay()];
+  actividad.viajesPorDia[diaNombre] += 1;
+
+  const semanaDelMes = Math.floor((fecha.getDate() - 1) / 7);
+  actividad.viajesPorSemana[semanaDelMes] += 1;
+
+  localStorage.setItem("actividadLlantify", JSON.stringify(actividad));
+  alert("Ruta registrada correctamente en la actividad.");
+});
+
