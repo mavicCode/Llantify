@@ -184,7 +184,7 @@ if (!botonSeleccion) {
   botonSeleccion.style.marginTop = "10px";
   contenedor.insertAdjacentElement("afterend", botonSeleccion);
 
-  // ←↓↓↓↓ AGREGAR AQUÍ EL EVENTO:
+
   botonSeleccion.addEventListener("click", () => {
     const rutaSeleccionada = JSON.parse(localStorage.getItem("rutaSeleccionada"));
     if (!rutaSeleccionada) {
