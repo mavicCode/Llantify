@@ -233,16 +233,29 @@ botonSeleccion.style.display = "inline-block";
     btn.style.marginRight = "8px";
     btn.className = "btn-alternativa";
     btn.onclick = () => {
-      directionsRenderer.setRouteIndex(idx);
-      // Actualiza la info de la ruta seleccionada
-      const leg = ruta.legs[0];
-      const distanciaKm = leg.distance.value / 1000;
-      const duracionMin = leg.duration.value / 60;
-      document.querySelector(".user_route_info_time label").textContent = `${Math.round(duracionMin)} min`;
-      document.querySelector(".user_route_info_distance label").textContent = `${distanciaKm.toFixed(1)} km`;
-      const costo = calcularCosto(distanciaKm, duracionMin);
-      document.querySelector(".user_route_info_cost label").textContent = `$${costo}`;
-    };
+  directionsRenderer.setRouteIndex(idx);
+
+  const leg = ruta.legs[0];
+  const distanciaKm = leg.distance.value / 1000;
+  const duracionMin = leg.duration.value / 60;
+
+  document.querySelector(".user_route_info_time label").textContent = `${Math.round(duracionMin)} min`;
+  document.querySelector(".user_route_info_distance label").textContent = `${distanciaKm.toFixed(1)} km`;
+  const costo = calcularCosto(distanciaKm, duracionMin);
+  document.querySelector(".user_route_info_cost label").textContent = `$${costo}`;
+
+  const nuevaRutaSeleccionada = {
+    origen: leg.start_address,
+    destino: leg.end_address,
+    distanciaKm: distanciaKm.toFixed(1),
+    duracionMin: Math.round(duracionMin),
+    costo: costo,
+    fecha: new Date().toLocaleDateString("es-PE")
+  };
+
+  localStorage.setItem("rutaSeleccionada", JSON.stringify(nuevaRutaSeleccionada));
+};
+
     contenedor.appendChild(btn);
   });
 }
