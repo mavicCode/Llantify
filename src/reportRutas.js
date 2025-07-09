@@ -1,4 +1,3 @@
-// script.js
 const rutas = [
   { id: 1, name: 'Lima Centro → San Isidro', time: '25 min', occupancy: 30 },
   { id: 2, name: 'Miraflores → La Molina', time: '35 min', occupancy: 65 },
