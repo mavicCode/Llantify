@@ -483,6 +483,22 @@ footer p {
         height: 160px;
     }
 }
+.reiniciar-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.reiniciar-btn:hover {
+  background-color: #d93636;
+}
+
 
 @media (max-width: 480px) {
     .toggle-btn {

@@ -816,4 +816,18 @@
   justify-content: space-between;
 }
 
+.btn-seleccionar-ruta {
+  padding: 10px 20px;
+  background-color: #3c80f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-seleccionar-ruta:hover {
+  background-color: #2a5dc9;
+}
 
