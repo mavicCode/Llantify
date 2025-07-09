@@ -94,6 +94,7 @@
                         <li><a href="user_calendar.html">Calendario</a></li>
                         <li><a href="/historial">Historial</a></li>
                         <li><a href="user_activity.html">Actividad</a></li>
+                        <li><a href="user_Info.html">Info</a></li>
                     </ul>
                 </div>
                 <div class="nav_user">
@@ -120,42 +121,122 @@
           <div class="info-box">Normal 🟢</div>
         </div>
 
-        <!-- Información de la ruta -->
-        <div class="info-block">
-          <button class="toggle-btn active">Información de la ruta actual</button>
-          <div class="info-sub">
-            <div><strong>13/05/2025</strong></div>
-            <div>San Miguel → Surco</div>
-            <div class="info-box">⏱ Tiempo estimado: 12 minutos</div>
-            <div class="info-box">Nivel de ocupación: 🟡</div>
-          </div>
-        </div>
+   <!-- Información de la ruta -->
+<div class="info-block">
+  <button class="toggle-btn active">Información de la ruta actual</button>
+  <div class="info-sub">
+    <div><strong id="fecha_ruta">13/05/2025</strong></div>
+    <div id="ruta_origen_destino">San Miguel → Surco</div>
+    <div class="info-box" id="tiempo_estimado">⏱ Tiempo estimado: 12 minutos</div>
+    <div class="info-box" id="distancia_actual">📏 Distancia: 7.2 km</div>
+  </div>
+</div>
 
-        <!-- Vehículos activos -->
-        <div class="info-block">
-          <button class="toggle-btn active">N° de vehículos en la ruta</button>
-          <div class="info-box">22 transportes activos 📍</div>
-        </div>
+<!-- Vehículos activos -->
+<div class="info-block">
+  <button class="toggle-btn active">N° de vehículos en la ruta</button>
+  <div class="info-box" id="vehiculos_activos">22 transportes activos 📍</div>
+</div>
 
-        <!-- Tiempo de espera -->
-        <div class="info-block">
-          <button class="toggle-btn active">Tiempo estimado de espera</button>
-          <div class="info-box">5 minutos en el paradero ⏰</div>
-        </div>
-      </div>
+<!-- Tiempo de espera -->
+<div class="info-block">
+  <button class="toggle-btn active">Tiempo estimado de espera</button>
+  <div class="info-box" id="tiempo_espera">5 minutos en el paradero ⏰</div>
+</div>
 
       <!-- Recomendaciones -->
       <div class="recommendations">
         <h3>🧠 Recomendaciones</h3>
-        <ul>
-          <li>⏰ Te recomendamos esperar pacientemente en el paradero.</li>
-          <li>🚶‍♀️ El transporte está algo lleno. Si puedes, viaja fuera de horas pico.</li>
-          <li>📌 Con solo 5 minutos de espera, sal con calma pero sin retrasarte.</li>
-        </ul>
+        <ul id="lista_recomendaciones">
+  <li>⏰ Te recomendamos esperar pacientemente en el paradero.</li>
+  <li>🚶‍♀️ El transporte está algo lleno. Si puedes, viaja fuera de horas pico.</li>
+  <li>📌 Con solo 5 minutos de espera, sal con calma pero sin retrasarte.</li>
+</ul>
       </div>
 
     </div>
   </main>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const data = JSON.parse(localStorage.getItem("rutaSeleccionada"));
+    if (data) {
+      // Fecha
+      const fecha = new Date();
+      const fechaTexto = fecha.toLocaleDateString("es-PE", {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+      document.getElementById("fecha_ruta").textContent = fechaTexto;
+
+      // Origen → Destino
+      document.getElementById("ruta_origen_destino").textContent = `${data.origen} → ${data.destino}`;
+
+      // Tiempo estimado
+      document.getElementById("tiempo_estimado").textContent = `⏱ Tiempo estimado: ${Math.round(data.duracionMin)} minutos`;
+
+      // Distancia
+      const distancia = parseFloat(data.distanciaKm);
+      document.getElementById("distancia_actual").textContent = `📏 Distancia: ${distancia.toFixed(1)} km`;
+
+      // Vehículos activos
+      let minVeh, maxVeh;
+      if (distancia < 5) {
+        minVeh = 22; maxVeh = 26;
+      } else if (distancia < 10) {
+        minVeh = 18; maxVeh = 22;
+      } else {
+        minVeh = 14; maxVeh = 17;
+      }
+      const vehiculos = Math.floor(Math.random() * (maxVeh - minVeh + 1)) + minVeh;
+      document.getElementById("vehiculos_activos").textContent = `${vehiculos} transportes activos 📍`;
+           // Recomendaciones dinámicas
+      const recomendaciones = [];
+
+      if (vehiculos < 16) {
+        recomendaciones.push("⏰ Hay pocos vehículos disponibles, espera pacientemente en el paradero.");
+      } else if (vehiculos <= 20) {
+        recomendaciones.push("🚌 Hay una cantidad moderada de vehículos, mantente atento a los horarios.");
+      } else {
+        recomendaciones.push("🚍 Hay buena disponibilidad de transporte, puedes salir con tranquilidad.");
+      }
+
+      if (distancia < 4) {
+        recomendaciones.push("🚶‍♀️ La ruta es corta, podrías considerar caminar si tienes tiempo.");
+      } else if (distancia >= 4 && distancia < 8) {
+        recomendaciones.push("🛵 Ruta de distancia media, elige un buen momento para salir.");
+      } else {
+        recomendaciones.push("🚗 La ruta es larga, evita horas pico si es posible.");
+      }
+
+      if (data.duracionMin > 20) {
+        recomendaciones.push("📌 El tiempo estimado es alto, revisa bien tu hora de salida.");
+      } else {
+        recomendaciones.push("⏱ El viaje será rápido, aprovecha para salir pronto.");
+      }
+
+      const lista = document.getElementById("lista_recomendaciones");
+      if (lista) {
+        lista.innerHTML = "";
+        recomendaciones.forEach((texto) => {
+          const li = document.createElement("li");
+          li.textContent = texto;
+          lista.appendChild(li);
+        });
+      }
+        // Tiempo de espera dinámico en el paradero
+      let tiempoEspera;
+      if (vehiculos > 21) {
+        tiempoEspera = 3; // muchos vehículos → espera corta
+      } else if (vehiculos > 17) {
+        tiempoEspera = 5; // cantidad moderada
+      } else {
+        tiempoEspera = 8; // pocos vehículos → espera más larga
+      }
+      document.getElementById("tiempo_espera").textContent = `${tiempoEspera} minutos en el paradero ⏰`;
+    }
+  });
+</script>
 
 </body>
 </html>

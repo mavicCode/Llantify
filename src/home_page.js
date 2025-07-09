@@ -138,6 +138,17 @@ function calcularRuta(origen, destino) {
       const distanciaKm = leg.distance.value / 1000;
       const duracionMin = leg.duration.value / 60;
 
+      // Guardar información clave en localStorage para otra vista
+      const rutaSeleccionada = {
+        origen: leg.start_address,
+        destino: leg.end_address,
+        distanciaKm: distanciaKm.toFixed(1),
+        duracionMin: Math.round(duracionMin),
+        costo: calcularCosto(distanciaKm, duracionMin),
+        fecha: new Date().toLocaleDateString("es-PE")
+      };
+      localStorage.setItem("rutaSeleccionada", JSON.stringify(rutaSeleccionada));
+
       document.querySelector(".user_route_info_time label").textContent = `${Math.round(duracionMin)} min`;
       document.querySelector(".user_route_info_distance label").textContent = `${distanciaKm.toFixed(1)} km`;
 
